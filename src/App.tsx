@@ -15,7 +15,6 @@ function App() {
       <Route path="/Store" element={<Store/>}/>
       <Route path="/About" element={<About/>}/>
     </Routes>
-
   </Container>
   </>
   )
