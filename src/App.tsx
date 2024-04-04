@@ -4,18 +4,21 @@ import { Home } from "./pages/Home"
 import { Store } from "./pages/Store"
 import { About } from "./pages/About"
 import { Navbar } from './components/Navbar.tsx'
+import { ShoppingCartProvider } from "./context/ShoppingCartContext.tsx"
 
 function App() {
   return (
     <>
-  <Navbar/>
-  <Container className="mb-4">
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/Store" element={<Store/>}/>
-      <Route path="/About" element={<About/>}/>
-    </Routes>
-  </Container>
+    <ShoppingCartProvider>
+    <Navbar/>
+    <Container className="mb-4">
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Store" element={<Store/>}/>
+        <Route path="/About" element={<About/>}/>
+      </Routes>
+    </Container>
+    </ShoppingCartProvider>
   </>
   )
 }
